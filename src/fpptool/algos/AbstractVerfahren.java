@@ -3,14 +3,14 @@ package fpptool.algos;
 /**
  * Created by spookee on 23.03.16.
  */
-public abstract class AbstractAlgo {
+public abstract class AbstractVerfahren {
 
     protected final Input input;
 
     protected Output output;
 
 
-    public AbstractAlgo(Input input) {
+    public AbstractVerfahren(Input input) {
         this.input = input;
     }
 
@@ -66,11 +66,22 @@ public abstract class AbstractAlgo {
         return output;
     }
 
+    /**
+     * Vergleichsgröße berechnen
+     *
+     * @param tau
+     * @param t
+     * @return
+     */
     protected abstract double calcV(Integer tau, Integer t);
 
+    /**
+     * Kostenkriterium berechnen
+     *
+     * @param tau
+     * @param t
+     * @return
+     */
     protected abstract double calcC(Integer tau, Integer t);
 
-    public void setOutput(Output output) {
-        this.output = output;
-    }
 }

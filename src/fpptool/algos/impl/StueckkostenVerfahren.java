@@ -1,11 +1,9 @@
 package fpptool.algos.impl;
 
-import fpptool.algos.AbstractAlgo;
+import fpptool.algos.AbstractVerfahren;
 import fpptool.algos.Input;
-import fpptool.algos.Lot;
-import fpptool.algos.Output;
 
-public class StueckkostenVerfahren extends AbstractAlgo {
+public class StueckkostenVerfahren extends AbstractVerfahren {
 
 
     public StueckkostenVerfahren(Input input) {
