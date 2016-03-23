@@ -23,7 +23,7 @@ public class StkKostVerfAlgo extends AbstractAlgo {
 
         for (int t = tau + 1; t <= T; ) {
             double C_t = calcC(tau, t);
-            double V_t = calcC(tau, t - 1);
+            double V_t = calcV(tau, t );
             boolean b = C_t <= V_t;
             // Schritt 4
             if (b && t < T) {
@@ -62,6 +62,10 @@ public class StkKostVerfAlgo extends AbstractAlgo {
         }
 
         return output;
+    }
+
+    private double calcV(Integer tau, Integer t){
+        return calcC(tau, t - 1);
     }
 
     private double calcC(Integer tau, Integer t) {

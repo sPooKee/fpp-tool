@@ -18,7 +18,7 @@ public class Output {
     /**
      * Gesamtkosten
      */
-    public double sumCosts;
+    public Double sumCosts = null;
 
     /**
      * Eingangs Parameter
@@ -28,5 +28,15 @@ public class Output {
     public Output(String algoName, Input input) {
         this.algoName = algoName;
         this.input = input;
+    }
+
+    public Double sumCosts(){
+        if(null == sumCosts){
+            sumCosts = 0.0;
+            for (Map.Entry<Integer, Lot> entry : lots.entrySet()) {
+                sumCosts += entry.getValue().sumCosts();
+            }
+        }
+        return sumCosts;
     }
 }

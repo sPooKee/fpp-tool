@@ -2,7 +2,6 @@ package fpptool;
 import fpptool.alogs.Input;
 import fpptool.alogs.Output;
 import fpptool.alogs.impl.StkKostVerfAlgo;
-
 import java.util.HashMap;
 
 public class Main {
@@ -14,7 +13,8 @@ public class Main {
         StkKostVerfAlgo algo = new StkKostVerfAlgo(input);
         Output output = algo.doTheMagic();
 
-        Thread.sleep(1);
+        System.out.println(output.sumCosts().toString() + " GE");
+
     }
 
     /**

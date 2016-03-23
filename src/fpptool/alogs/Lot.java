@@ -28,4 +28,8 @@ public class Lot {
         this.K = K;
         this.h = h;
     }
+
+    public double sumCosts(){
+        return K+h;
+    }
 }
