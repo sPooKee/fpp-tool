@@ -29,7 +29,7 @@ public class Input {
      */
     public final int fixedLot;
 
-    public Input(HashMap<Integer, Float> d, double k, double h, int fixedRange, int fixedLot) {
+    public Input(HashMap<Integer, Double> d, double k, double h, int fixedRange, int fixedLot) {
         this.d = d;
         K = k;
         this.h = h;
