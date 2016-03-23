@@ -7,7 +7,7 @@ public class Input {
     /**
      * Bedarfe
      */
-    public final HashMap<Integer, Float> d;
+    public final HashMap<Integer, Double> d;
 
     /**
      * Rüstkostensatz
