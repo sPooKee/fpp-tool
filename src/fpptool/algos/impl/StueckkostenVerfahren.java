@@ -3,18 +3,22 @@ package fpptool.algos.impl;
 import fpptool.algos.AbstractVerfahren;
 import fpptool.algos.Input;
 
-public class StueckkostenVerfahren extends AbstractVerfahren {
+public class StueckkostenVerfahren extends AbstractVerfahren
+{
 
 
-    public StueckkostenVerfahren(Input input) {
+    public StueckkostenVerfahren(Input input)
+    {
         super(input);
     }
 
-    protected double calcV(Integer tau, Integer t){
+    protected double calcV(Integer tau, Integer t)
+    {
         return calcC(tau, t - 1);
     }
 
-    protected double calcC(Integer tau, Integer t) {
+    protected double calcC(Integer tau, Integer t)
+    {
         double sum_d1 = 0.0;
         double sum_d2 = 0.0;
 

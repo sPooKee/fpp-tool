@@ -1,14 +1,17 @@
 package fpptool.algos;
 
-public abstract class AbstractVerfahren {
+public abstract class AbstractVerfahren
+{
 
     protected final Input input;
 
-    public AbstractVerfahren(Input input) {
+    public AbstractVerfahren(Input input)
+    {
         this.input = input;
     }
 
-    public Output doTheMagic() {
+    public Output doTheMagic()
+    {
 
         Integer tau = 1;
         //Integer t = tau + 1;
@@ -64,7 +67,8 @@ public abstract class AbstractVerfahren {
         return output;
     }
 
-    protected boolean compareCV(double C, double V){
+    protected boolean compareCV(double C, double V)
+    {
         return C <= V;
     }
 
@@ -73,6 +77,7 @@ public abstract class AbstractVerfahren {
      *
      * @param tau
      * @param t
+     *
      * @return
      */
     protected abstract double calcV(Integer tau, Integer t);
@@ -82,6 +87,7 @@ public abstract class AbstractVerfahren {
      *
      * @param tau
      * @param t
+     *
      * @return
      */
     protected abstract double calcC(Integer tau, Integer t);

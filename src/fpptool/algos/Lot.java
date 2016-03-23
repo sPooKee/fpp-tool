@@ -1,6 +1,7 @@
 package fpptool.algos;
 
-public class Lot {
+public class Lot
+{
 
     /**
      * Losgröße
@@ -22,14 +23,16 @@ public class Lot {
      */
     public final double h;
 
-    public Lot(double q, long tau, double K, double h) {
+    public Lot(double q, long tau, double K, double h)
+    {
         this.q = q;
         this.tau = tau;
         this.K = K;
         this.h = h;
     }
 
-    public double sumCosts(){
-        return K+h;
+    public double sumCosts()
+    {
+        return K + h;
     }
 }

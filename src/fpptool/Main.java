@@ -1,13 +1,16 @@
 package fpptool;
+
 import fpptool.algos.Input;
 import fpptool.algos.Output;
 import fpptool.algos.impl.*;
 
 import java.util.HashMap;
 
-public class Main {
+public class Main
+{
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException
+    {
 
         HashMap d = Input.convertBedarfeFromStringToHashMap("100;90;80;70;160;140;110;150;190;210");
         Input input = new Input(d, 100.0, 0.2, 0, 0);
