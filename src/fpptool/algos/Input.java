@@ -1,7 +1,6 @@
-package fpptool.alogs;
+package fpptool.algos;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class Input {
     /**
@@ -35,5 +34,21 @@ public class Input {
         this.h = h;
         this.fixedRange = fixedRange;
         this.fixedLot = fixedLot;
+    }
+
+    /**
+     * Generate HashMap from String "123;34;234;4234;67"
+     *
+     * @param bedarfe
+     * @return
+     */
+    public static HashMap<Integer, Double> convertBedarfeFromStringToHashMap(String bedarfe){
+        String[] ds = bedarfe.split(";");
+        HashMap<Integer, Double> returnValue = new HashMap<>();
+        int i = 1;
+        for (String s : ds) {
+            returnValue.put(i++, Double.parseDouble(s));
+        }
+        return returnValue;
     }
 }

@@ -1,4 +1,4 @@
-package fpptool.alogs;
+package fpptool.algos;
 
 public class Lot {
 

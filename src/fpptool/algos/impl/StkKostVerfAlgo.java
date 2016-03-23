@@ -1,9 +1,9 @@
-package fpptool.alogs.impl;
+package fpptool.algos.impl;
 
-import fpptool.alogs.AbstractAlgo;
-import fpptool.alogs.Input;
-import fpptool.alogs.Lot;
-import fpptool.alogs.Output;
+import fpptool.algos.AbstractAlgo;
+import fpptool.algos.Input;
+import fpptool.algos.Lot;
+import fpptool.algos.Output;
 
 public class StkKostVerfAlgo extends AbstractAlgo {
 

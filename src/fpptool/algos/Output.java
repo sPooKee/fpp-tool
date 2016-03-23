@@ -1,4 +1,4 @@
-package fpptool.alogs;
+package fpptool.algos;
 
 import java.util.HashMap;
 import java.util.Map;

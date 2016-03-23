@@ -1,7 +1,4 @@
-package fpptool.alogs;
-
-import java.util.HashMap;
-import java.util.Map;
+package fpptool.algos;
 
 /**
  * Created by spookee on 23.03.16.
