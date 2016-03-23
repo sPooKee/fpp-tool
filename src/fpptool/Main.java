@@ -1,6 +1,7 @@
 package fpptool;
 import fpptool.algos.Input;
 import fpptool.algos.Output;
+import fpptool.algos.impl.GroffVerfahren;
 import fpptool.algos.impl.SilverMealVerfahren;
 import fpptool.algos.impl.StueckkostenVerfahren;
 import fpptool.algos.impl.StueckperiodenausgleichsVerfahren;
@@ -26,5 +27,8 @@ public class Main {
         Output output3 = algo3.doTheMagic();
         System.out.println(output3.algoName + ": " + output3.sumCosts().toString() + " GE");
 
+        GroffVerfahren algo4 = new GroffVerfahren(input);
+        Output output4 = algo4.doTheMagic();
+        System.out.println(output4.algoName + ": " + output4.sumCosts().toString() + " GE");
     }
 }

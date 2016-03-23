@@ -20,12 +20,12 @@ public abstract class AbstractVerfahren {
         //Integer t = tau + 1;
         Integer T = input.d.size();
 
-        Output output = new Output(Class.class.toString(), input);
+        Output output = new Output(getClass().toString(), input);
 
         for (int t = tau + 1; t <= T; ) {
             double C_t = calcC(tau, t);
             double V_t = calcV(tau, t);
-            boolean b = C_t <= V_t;
+            boolean b = compareCV(C_t, V_t);
             // Schritt 4
             if (b && t < T) {
                 t += 1;
@@ -64,6 +64,10 @@ public abstract class AbstractVerfahren {
         }
 
         return output;
+    }
+
+    protected boolean compareCV(double C, double V){
+        return C <= V;
     }
 
     /**
