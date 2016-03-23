@@ -12,7 +12,7 @@ public abstract class AbstractVerfahren
 
     public Output doTheMagic()
     {
-
+        final long timeStart = System.nanoTime();
         Integer tau = 1;
         //Integer t = tau + 1;
         Integer T = input.d.size();
@@ -64,6 +64,7 @@ public abstract class AbstractVerfahren
             }
         }
 
+        output.setRuntime(System.nanoTime() - timeStart);
         return output;
     }
 

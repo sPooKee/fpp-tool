@@ -18,10 +18,25 @@ public class Output
      * Lots
      */
     public HashMap<Integer, Lot> lots = new HashMap<>();
+
+    public Long getRuntime()
+    {
+        return runtime;
+    }
+
     /**
      * Gesamtkosten
      */
+
     public Double sumCosts = null;
+
+    public void setRuntime(Long runtime)
+    {
+        if (null == this.runtime && null != runtime)
+            this.runtime = runtime;
+    }
+
+    private Long runtime = null;
 
     public Output(String algoName, Input input)
     {
