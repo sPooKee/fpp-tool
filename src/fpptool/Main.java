@@ -1,10 +1,7 @@
 package fpptool;
 import fpptool.algos.Input;
 import fpptool.algos.Output;
-import fpptool.algos.impl.GroffVerfahren;
-import fpptool.algos.impl.SilverMealVerfahren;
-import fpptool.algos.impl.StueckkostenVerfahren;
-import fpptool.algos.impl.StueckperiodenausgleichsVerfahren;
+import fpptool.algos.impl.*;
 
 import java.util.HashMap;
 
@@ -30,5 +27,9 @@ public class Main {
         GroffVerfahren algo4 = new GroffVerfahren(input);
         Output output4 = algo4.doTheMagic();
         System.out.println(output4.algoName + ": " + output4.sumCosts().toString() + " GE");
+
+        DynamischePlanungsrechnungVerfahren algo5 = new DynamischePlanungsrechnungVerfahren(input);
+        Output output5 = algo5.doTheMagic();
+        System.out.println(output5.algoName + ": " + output5.sumCosts().toString() + " GE");
     }
 }

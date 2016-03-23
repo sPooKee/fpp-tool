@@ -5,6 +5,7 @@ import fpptool.algos.Input;
 
 
 public class StueckperiodenausgleichsVerfahren extends AbstractVerfahren {
+
     public StueckperiodenausgleichsVerfahren(Input input) {
         super(input);
     }

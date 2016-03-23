@@ -1,14 +1,8 @@
 package fpptool.algos;
 
-/**
- * Created by spookee on 23.03.16.
- */
 public abstract class AbstractVerfahren {
 
     protected final Input input;
-
-    protected Output output;
-
 
     public AbstractVerfahren(Input input) {
         this.input = input;
@@ -58,7 +52,11 @@ public abstract class AbstractVerfahren {
                 for (int i = tau; i <= T; i++) {
                     q_tau += input.d.get(i);
                 }
-                output.lots.put(tau, new Lot(q_tau, tau, input.K, 0.0));
+                double h_tau = 0;
+                for (int i = tau; i <= t; i++) {
+                    h_tau += input.d.get(i) * (i - tau) * input.h;
+                }
+                output.lots.put(tau, new Lot(q_tau, tau, input.K, h_tau));
                 t += 1;
             }
         }
