@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        /*HashMap d = Input.convertBedarfeFromStringToHashMap("100;90;80;70;160;140;110;150;190;210");
+        HashMap d = Input.convertBedarfeFromStringToHashMap("100;90;80;70;160;140;110;150;190;210");
 
 
         for (double K = 10; K <= 100; K += 10) {
@@ -18,17 +18,7 @@ public class Main {
                 Input input = new Input(d, K, h, 0, 0);
                 calcAlgos(input);
             }
-        }*/
-
-        HashMap d = Input.convertBedarfeFromStringToHashMap("15;5;20;25");
-        Input input = new Input(d, 150, 5, 0, 0);
-        calcWagnerWhitin(input);
-    }
-
-    private static void calcWagnerWhitin(Input input) {
-        System.out.println("Input: " + input.K + " - " + input.h);
-        WagnerWithin algo = new WagnerWithin(input);
-        algo.doTheMagic();
+        }
     }
 
     public static void calcAlgos(Input input) {
@@ -53,6 +43,10 @@ public class Main {
         DynamischePlanungsrechnungVerfahren algo5 = new DynamischePlanungsrechnungVerfahren(input);
         Output output5 = algo5.doTheMagic();
         System.out.println(output5.algoName + ": \t" + output5.sumCosts().toString() + " GE - " + output5.getRuntime());
+
+        WagnerWithinVerfahren algo6 = new WagnerWithinVerfahren(input);
+        Output output6 = algo6.doTheMagic();
+        System.out.println(output6.algoName + ": \t\t\t\t" + output6.sumCosts().toString() + " GE - " + output6.getRuntime());
 
         System.out.println(" - - - - - - - - - - - - - - - - - - - - - ");
     }

@@ -10,8 +10,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class WagnerWithin extends AbstractVerfahren {
-    public WagnerWithin(Input input) {
+public class WagnerWithinVerfahren extends AbstractVerfahren {
+    public WagnerWithinVerfahren(Input input) {
         super(input);
     }
 
@@ -58,9 +58,8 @@ public class WagnerWithin extends AbstractVerfahren {
             for (int i = optimalerWeg.get(t); i <= (optimalerWeg.get(t + 1) - 1); i++) {
                 q += input.d.get(i);
             }
-            output.lots.put(optimalerWeg.get(t), new Lot(q, optimalerWeg.get(t), input.K, 0)); //Todo: Lagerkosten ausrechnen
+            output.lots.put(optimalerWeg.get(t), new Lot(q, optimalerWeg.get(t), input.K, calcC(optimalerWeg.get(t), optimalerWeg.get(t + 1)) - input.K));
         }
-
 
         output.setRuntime(System.nanoTime() - timeStart);
         return output;
@@ -68,6 +67,7 @@ public class WagnerWithin extends AbstractVerfahren {
 
     @Override
     protected double calcV(Integer tau, Integer t) {
+        //Wird  für dieses Verfahren nicht benötigt...
         return 0;
     }
 
