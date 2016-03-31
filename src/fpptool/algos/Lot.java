@@ -3,6 +3,14 @@ package fpptool.algos;
 public class Lot
 {
 
+    public Lot(double q, long tau, double K, double h)
+    {
+        this.q = q;
+        this.tau = tau;
+        this.K = K;
+        this.h = h;
+    }
+
     /**
      * Losgröße
      */
@@ -22,14 +30,6 @@ public class Lot
      * Lagerkosten fürs Los
      */
     public final double h;
-
-    public Lot(double q, long tau, double K, double h)
-    {
-        this.q = q;
-        this.tau = tau;
-        this.K = K;
-        this.h = h;
-    }
 
     public double sumCosts()
     {
