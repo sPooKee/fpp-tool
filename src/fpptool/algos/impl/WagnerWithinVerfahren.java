@@ -24,12 +24,8 @@ public class WagnerWithinVerfahren extends AbstractVerfahren {
         Output output = new Output(getClass().toString(), input);
 
         HashMap<Integer, Double> C = new HashMap<Integer, Double>();
-        HashMap<Integer, Double> C_ = new HashMap<>();
+        Double C_Star = null;
         HashMap<Integer, Integer> j = new HashMap<>();
-
-        //double C_t = calcC(tau, t);
-        //double V_t = calcV(tau, t);
-        //j.put(1,0);
 
         for (int t = tau + 1; t <= T + 1; t++) {
             C.put(t, calcC(tau, t));
@@ -37,11 +33,10 @@ public class WagnerWithinVerfahren extends AbstractVerfahren {
         }
 
         for (tau = tau + 1; tau < T; tau++) {
-
-            for (int t = tau + 1; t <= T + 1; t++) { //TODO T + 1 ?
-                C_.put(t, C.get(tau) + calcC(tau, t));
-                if (C_.get(t) < C.get(t)) {
-                    C.put(t, C_.get(t));
+            for (int t = tau + 1; t <= T + 1; t++) {
+                C_Star = C.get(tau) + calcC(tau, t);
+                if (C_Star < C.get(t)) {
+                    C.put(t, C_Star);
                     j.put(t, tau);
                 }
             }
