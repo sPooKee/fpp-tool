@@ -7,6 +7,12 @@ public class GroffVerfahren extends AbstractVerfahren
 {
 
 
+    @Override
+    public String getName()
+    {
+        return "Groff";
+    }
+
     public GroffVerfahren(Input input)
     {
         super(input);

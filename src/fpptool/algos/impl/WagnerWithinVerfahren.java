@@ -6,17 +6,24 @@ import fpptool.algos.Lot;
 import fpptool.algos.Output;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
-public class WagnerWithinVerfahren extends AbstractVerfahren {
-    public WagnerWithinVerfahren(Input input) {
+public class WagnerWithinVerfahren extends AbstractVerfahren
+{
+    @Override
+    public String getName()
+    {
+        return "Wagner-Within";
+    }
+
+    public WagnerWithinVerfahren(Input input)
+    {
         super(input);
     }
 
     @Override
-    public Output doTheMagic() {
+    public Output doTheMagic()
+    {
         final long timeStart = System.nanoTime();
         Integer tau = 1;
         Integer T = input.d.size();
@@ -61,13 +68,15 @@ public class WagnerWithinVerfahren extends AbstractVerfahren {
     }
 
     @Override
-    protected double calcV(Integer tau, Integer t) {
+    protected double calcV(Integer tau, Integer t)
+    {
         //Wird  für dieses Verfahren nicht benötigt...
         return 0;
     }
 
     @Override
-    protected double calcC(Integer tau, Integer t) {
+    protected double calcC(Integer tau, Integer t)
+    {
         double sum_dj = 0;
         for (int j = tau + 1; j <= (t - 1); j++) {
             sum_dj += (j - tau) * input.d.get(j);

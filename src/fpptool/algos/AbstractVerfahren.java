@@ -4,7 +4,10 @@ public abstract class AbstractVerfahren {
 
     protected final Input input;
 
+    public abstract String getName();
+
     public AbstractVerfahren(Input input) {
+
         this.input = input;
     }
 
@@ -14,7 +17,7 @@ public abstract class AbstractVerfahren {
         //Integer t = tau + 1;
         Integer T = input.d.size();
 
-        Output output = new Output(getClass().toString(), input);
+        Output output = new Output(getName(), input);
 
         for (int t = tau + 1; t <= T; ) {
             double C_t = calcC(tau, t);

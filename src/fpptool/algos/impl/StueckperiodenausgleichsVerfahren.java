@@ -4,14 +4,23 @@ import fpptool.algos.AbstractVerfahren;
 import fpptool.algos.Input;
 
 
-public class StueckperiodenausgleichsVerfahren extends AbstractVerfahren {
+public class StueckperiodenausgleichsVerfahren extends AbstractVerfahren
+{
 
-    public StueckperiodenausgleichsVerfahren(Input input) {
+    @Override
+    public String getName()
+    {
+        return "Stückperiodenausgleich";
+    }
+
+    public StueckperiodenausgleichsVerfahren(Input input)
+    {
         super(input);
     }
 
     @Override
-    protected double calcV(Integer tau, Integer t) {
+    protected double calcV(Integer tau, Integer t)
+    {
         /**
          * Quotient aus Rüst- und Lagerkosten
          */
@@ -19,7 +28,8 @@ public class StueckperiodenausgleichsVerfahren extends AbstractVerfahren {
     }
 
     @Override
-    protected double calcC(Integer tau, Integer t) {
+    protected double calcC(Integer tau, Integer t)
+    {
         double sum_dj = 0;
         for (int j = tau + 1; j <= t; j++) {
             sum_dj += (j - tau) * input.d.get(j);
